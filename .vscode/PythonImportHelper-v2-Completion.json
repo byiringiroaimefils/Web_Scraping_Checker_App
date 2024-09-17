@@ -1,0 +1,100 @@
+[
+    {
+        "label": "requests",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "requests",
+        "description": "requests",
+        "detail": "requests",
+        "documentation": {}
+    },
+    {
+        "label": "BeautifulSoup",
+        "importPath": "bs4",
+        "description": "bs4",
+        "isExtraImport": true,
+        "detail": "bs4",
+        "documentation": {}
+    },
+    {
+        "label": "openpyxl",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "openpyxl",
+        "description": "openpyxl",
+        "detail": "openpyxl",
+        "documentation": {}
+    },
+    {
+        "label": "url",
+        "kind": 5,
+        "importPath": "DataExtraction",
+        "description": "DataExtraction",
+        "peekOfCode": "url = \"https://igihe.com/index.php\"\nresponse = requests.get(url)\nsoup = BeautifulSoup(response.content, 'html.parser')\nparagraphs = soup.find_all('p')\nworkbook = openpyxl.Workbook()\nsheet = workbook.active\nsheet['A1'] = 'Paragraph Number'\nsheet['B1'] = 'Text'\nfor i, p in enumerate(paragraphs):\n    sheet.cell(row=i+1, column=1, value=i)",
+        "detail": "DataExtraction",
+        "documentation": {}
+    },
+    {
+        "label": "response",
+        "kind": 5,
+        "importPath": "DataExtraction",
+        "description": "DataExtraction",
+        "peekOfCode": "response = requests.get(url)\nsoup = BeautifulSoup(response.content, 'html.parser')\nparagraphs = soup.find_all('p')\nworkbook = openpyxl.Workbook()\nsheet = workbook.active\nsheet['A1'] = 'Paragraph Number'\nsheet['B1'] = 'Text'\nfor i, p in enumerate(paragraphs):\n    sheet.cell(row=i+1, column=1, value=i)\n    sheet.cell(row=i+1, column=2, value=p.text)",
+        "detail": "DataExtraction",
+        "documentation": {}
+    },
+    {
+        "label": "soup",
+        "kind": 5,
+        "importPath": "DataExtraction",
+        "description": "DataExtraction",
+        "peekOfCode": "soup = BeautifulSoup(response.content, 'html.parser')\nparagraphs = soup.find_all('p')\nworkbook = openpyxl.Workbook()\nsheet = workbook.active\nsheet['A1'] = 'Paragraph Number'\nsheet['B1'] = 'Text'\nfor i, p in enumerate(paragraphs):\n    sheet.cell(row=i+1, column=1, value=i)\n    sheet.cell(row=i+1, column=2, value=p.text)\nworkbook.save('igihe_data.xlsx')",
+        "detail": "DataExtraction",
+        "documentation": {}
+    },
+    {
+        "label": "paragraphs",
+        "kind": 5,
+        "importPath": "DataExtraction",
+        "description": "DataExtraction",
+        "peekOfCode": "paragraphs = soup.find_all('p')\nworkbook = openpyxl.Workbook()\nsheet = workbook.active\nsheet['A1'] = 'Paragraph Number'\nsheet['B1'] = 'Text'\nfor i, p in enumerate(paragraphs):\n    sheet.cell(row=i+1, column=1, value=i)\n    sheet.cell(row=i+1, column=2, value=p.text)\nworkbook.save('igihe_data.xlsx')\nprint(\"Data has been extracted \")",
+        "detail": "DataExtraction",
+        "documentation": {}
+    },
+    {
+        "label": "workbook",
+        "kind": 5,
+        "importPath": "DataExtraction",
+        "description": "DataExtraction",
+        "peekOfCode": "workbook = openpyxl.Workbook()\nsheet = workbook.active\nsheet['A1'] = 'Paragraph Number'\nsheet['B1'] = 'Text'\nfor i, p in enumerate(paragraphs):\n    sheet.cell(row=i+1, column=1, value=i)\n    sheet.cell(row=i+1, column=2, value=p.text)\nworkbook.save('igihe_data.xlsx')\nprint(\"Data has been extracted \")",
+        "detail": "DataExtraction",
+        "documentation": {}
+    },
+    {
+        "label": "sheet",
+        "kind": 5,
+        "importPath": "DataExtraction",
+        "description": "DataExtraction",
+        "peekOfCode": "sheet = workbook.active\nsheet['A1'] = 'Paragraph Number'\nsheet['B1'] = 'Text'\nfor i, p in enumerate(paragraphs):\n    sheet.cell(row=i+1, column=1, value=i)\n    sheet.cell(row=i+1, column=2, value=p.text)\nworkbook.save('igihe_data.xlsx')\nprint(\"Data has been extracted \")",
+        "detail": "DataExtraction",
+        "documentation": {}
+    },
+    {
+        "label": "sheet['A1']",
+        "kind": 5,
+        "importPath": "DataExtraction",
+        "description": "DataExtraction",
+        "peekOfCode": "sheet['A1'] = 'Paragraph Number'\nsheet['B1'] = 'Text'\nfor i, p in enumerate(paragraphs):\n    sheet.cell(row=i+1, column=1, value=i)\n    sheet.cell(row=i+1, column=2, value=p.text)\nworkbook.save('igihe_data.xlsx')\nprint(\"Data has been extracted \")",
+        "detail": "DataExtraction",
+        "documentation": {}
+    },
+    {
+        "label": "sheet['B1']",
+        "kind": 5,
+        "importPath": "DataExtraction",
+        "description": "DataExtraction",
+        "peekOfCode": "sheet['B1'] = 'Text'\nfor i, p in enumerate(paragraphs):\n    sheet.cell(row=i+1, column=1, value=i)\n    sheet.cell(row=i+1, column=2, value=p.text)\nworkbook.save('igihe_data.xlsx')\nprint(\"Data has been extracted \")",
+        "detail": "DataExtraction",
+        "documentation": {}
+    }
+]
