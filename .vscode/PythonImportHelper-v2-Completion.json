@@ -30,7 +30,7 @@
         "kind": 5,
         "importPath": "DataExtraction",
         "description": "DataExtraction",
-        "peekOfCode": "url = \"https://igihe.com/index.php\"\nresponse = requests.get(url)\nsoup = BeautifulSoup(response.content, 'html.parser')\nparagraphs = soup.find_all('p')\nworkbook = openpyxl.Workbook()\nsheet = workbook.active\nsheet['A1'] = 'Paragraph Number'\nsheet['B1'] = 'Text'\nfor i, p in enumerate(paragraphs):\n    sheet.cell(row=i+1, column=1, value=i)",
+        "peekOfCode": "url = \"https://www.newtimes.co.rw\"\nresponse = requests.get(url)\nsoup = BeautifulSoup(response.content, 'html.parser')\ntitle_articles= soup.find_all(\"h1\", class_=\"title article\")\narticle_bodies= soup.find_all(\"div\", class_=\"article-body\")\nworkbook = openpyxl.Workbook()\nsheet = workbook.active\nsheet['A1'] = 'Title Article'\nsheet['B1'] = 'article Body'\nfor i, p in  enumerate(zip(title_articles, article_bodies), start=2) :",
         "detail": "DataExtraction",
         "documentation": {}
     },
@@ -39,7 +39,7 @@
         "kind": 5,
         "importPath": "DataExtraction",
         "description": "DataExtraction",
-        "peekOfCode": "response = requests.get(url)\nsoup = BeautifulSoup(response.content, 'html.parser')\nparagraphs = soup.find_all('p')\nworkbook = openpyxl.Workbook()\nsheet = workbook.active\nsheet['A1'] = 'Paragraph Number'\nsheet['B1'] = 'Text'\nfor i, p in enumerate(paragraphs):\n    sheet.cell(row=i+1, column=1, value=i)\n    sheet.cell(row=i+1, column=2, value=p.text)",
+        "peekOfCode": "response = requests.get(url)\nsoup = BeautifulSoup(response.content, 'html.parser')\ntitle_articles= soup.find_all(\"h1\", class_=\"title article\")\narticle_bodies= soup.find_all(\"div\", class_=\"article-body\")\nworkbook = openpyxl.Workbook()\nsheet = workbook.active\nsheet['A1'] = 'Title Article'\nsheet['B1'] = 'article Body'\nfor i, p in  enumerate(zip(title_articles, article_bodies), start=2) :\n        sheet.cell(row=i+1, column=1, value=p.text.strip())",
         "detail": "DataExtraction",
         "documentation": {}
     },
@@ -48,16 +48,7 @@
         "kind": 5,
         "importPath": "DataExtraction",
         "description": "DataExtraction",
-        "peekOfCode": "soup = BeautifulSoup(response.content, 'html.parser')\nparagraphs = soup.find_all('p')\nworkbook = openpyxl.Workbook()\nsheet = workbook.active\nsheet['A1'] = 'Paragraph Number'\nsheet['B1'] = 'Text'\nfor i, p in enumerate(paragraphs):\n    sheet.cell(row=i+1, column=1, value=i)\n    sheet.cell(row=i+1, column=2, value=p.text)\nworkbook.save('igihe_data.xlsx')",
-        "detail": "DataExtraction",
-        "documentation": {}
-    },
-    {
-        "label": "paragraphs",
-        "kind": 5,
-        "importPath": "DataExtraction",
-        "description": "DataExtraction",
-        "peekOfCode": "paragraphs = soup.find_all('p')\nworkbook = openpyxl.Workbook()\nsheet = workbook.active\nsheet['A1'] = 'Paragraph Number'\nsheet['B1'] = 'Text'\nfor i, p in enumerate(paragraphs):\n    sheet.cell(row=i+1, column=1, value=i)\n    sheet.cell(row=i+1, column=2, value=p.text)\nworkbook.save('igihe_data.xlsx')\nprint(\"Data has been extracted \")",
+        "peekOfCode": "soup = BeautifulSoup(response.content, 'html.parser')\ntitle_articles= soup.find_all(\"h1\", class_=\"title article\")\narticle_bodies= soup.find_all(\"div\", class_=\"article-body\")\nworkbook = openpyxl.Workbook()\nsheet = workbook.active\nsheet['A1'] = 'Title Article'\nsheet['B1'] = 'article Body'\nfor i, p in  enumerate(zip(title_articles, article_bodies), start=2) :\n        sheet.cell(row=i+1, column=1, value=p.text.strip())\n        sheet.cell(row=i+1, column=2, value=p.text.strip())",
         "detail": "DataExtraction",
         "documentation": {}
     },
@@ -66,7 +57,7 @@
         "kind": 5,
         "importPath": "DataExtraction",
         "description": "DataExtraction",
-        "peekOfCode": "workbook = openpyxl.Workbook()\nsheet = workbook.active\nsheet['A1'] = 'Paragraph Number'\nsheet['B1'] = 'Text'\nfor i, p in enumerate(paragraphs):\n    sheet.cell(row=i+1, column=1, value=i)\n    sheet.cell(row=i+1, column=2, value=p.text)\nworkbook.save('igihe_data.xlsx')\nprint(\"Data has been extracted \")",
+        "peekOfCode": "workbook = openpyxl.Workbook()\nsheet = workbook.active\nsheet['A1'] = 'Title Article'\nsheet['B1'] = 'article Body'\nfor i, p in  enumerate(zip(title_articles, article_bodies), start=2) :\n        sheet.cell(row=i+1, column=1, value=p.text.strip())\n        sheet.cell(row=i+1, column=2, value=p.text.strip())\nworkbook.save('TheNew_data.xlsx')\nprint(\"Data has been extracted \")",
         "detail": "DataExtraction",
         "documentation": {}
     },
@@ -75,7 +66,7 @@
         "kind": 5,
         "importPath": "DataExtraction",
         "description": "DataExtraction",
-        "peekOfCode": "sheet = workbook.active\nsheet['A1'] = 'Paragraph Number'\nsheet['B1'] = 'Text'\nfor i, p in enumerate(paragraphs):\n    sheet.cell(row=i+1, column=1, value=i)\n    sheet.cell(row=i+1, column=2, value=p.text)\nworkbook.save('igihe_data.xlsx')\nprint(\"Data has been extracted \")",
+        "peekOfCode": "sheet = workbook.active\nsheet['A1'] = 'Title Article'\nsheet['B1'] = 'article Body'\nfor i, p in  enumerate(zip(title_articles, article_bodies), start=2) :\n        sheet.cell(row=i+1, column=1, value=p.text.strip())\n        sheet.cell(row=i+1, column=2, value=p.text.strip())\nworkbook.save('TheNew_data.xlsx')\nprint(\"Data has been extracted \")",
         "detail": "DataExtraction",
         "documentation": {}
     },
@@ -84,7 +75,7 @@
         "kind": 5,
         "importPath": "DataExtraction",
         "description": "DataExtraction",
-        "peekOfCode": "sheet['A1'] = 'Paragraph Number'\nsheet['B1'] = 'Text'\nfor i, p in enumerate(paragraphs):\n    sheet.cell(row=i+1, column=1, value=i)\n    sheet.cell(row=i+1, column=2, value=p.text)\nworkbook.save('igihe_data.xlsx')\nprint(\"Data has been extracted \")",
+        "peekOfCode": "sheet['A1'] = 'Title Article'\nsheet['B1'] = 'article Body'\nfor i, p in  enumerate(zip(title_articles, article_bodies), start=2) :\n        sheet.cell(row=i+1, column=1, value=p.text.strip())\n        sheet.cell(row=i+1, column=2, value=p.text.strip())\nworkbook.save('TheNew_data.xlsx')\nprint(\"Data has been extracted \")",
         "detail": "DataExtraction",
         "documentation": {}
     },
@@ -93,7 +84,7 @@
         "kind": 5,
         "importPath": "DataExtraction",
         "description": "DataExtraction",
-        "peekOfCode": "sheet['B1'] = 'Text'\nfor i, p in enumerate(paragraphs):\n    sheet.cell(row=i+1, column=1, value=i)\n    sheet.cell(row=i+1, column=2, value=p.text)\nworkbook.save('igihe_data.xlsx')\nprint(\"Data has been extracted \")",
+        "peekOfCode": "sheet['B1'] = 'article Body'\nfor i, p in  enumerate(zip(title_articles, article_bodies), start=2) :\n        sheet.cell(row=i+1, column=1, value=p.text.strip())\n        sheet.cell(row=i+1, column=2, value=p.text.strip())\nworkbook.save('TheNew_data.xlsx')\nprint(\"Data has been extracted \")",
         "detail": "DataExtraction",
         "documentation": {}
     }
